@@ -5,7 +5,7 @@ var pool    = require('../db/crowdfunding_db');
 router.get('/indexbox',function(req,res,next){
 	pool.getConnection(function(err,connection){
 		if (err) {
-			res.send('连接错误')
+			res.send('Connection error')
 		}
 		console.log(connection)
 		const query1 = `
@@ -17,7 +17,7 @@ router.get('/indexbox',function(req,res,next){
 		connection.query(query1,function(err,rows){
 			if (err) {
 				console.log(err)
-				res.send('查询失败')
+				res.send('Query failure')
 			}
 			res.send(rows)
 			connection.release();
@@ -29,7 +29,7 @@ router.get('/indexbox',function(req,res,next){
 router.get('/Search',function(req,res,next){
 	pool.getConnection(function(err,connection){
 		if (err) {
-			res.send('连接错误')
+			res.send('Connection error')
 		}
 		let query = `
 		SELECT f.FUNDRAISER_ID, f.ORGANIZER, f.CAPTION, f.TARGET_FUNDING, f.CURRENT_FUNDING, f.CITY,f.CONTENT
@@ -59,7 +59,7 @@ router.get('/Search',function(req,res,next){
 		connection.query(query,params,function(err,rows){
 			if (err) {
 				console.log(err)
-				res.send('查询失败')
+				res.send('Query failure')
 			}
 			res.send(rows)
 			connection.release();
@@ -71,7 +71,7 @@ router.get('/Search',function(req,res,next){
 router.get('/queryById', function (req, res, next) {
 	pool.getConnection(function(err,connection){
 		if (err) {
-			res.send('连接错误')
+			res.send('Connection error')
 		}
 		const fundraiserId = req.query.id;
 		console.log(fundraiserId);
@@ -84,7 +84,7 @@ router.get('/queryById', function (req, res, next) {
 		connection.query(query, [fundraiserId],function(err,rows){
 			if (err) {
 				console.log(err)
-				res.send('查询失败')
+				res.send('Query failure')
 			}
 			res.send(rows[0])
 			connection.release();
