@@ -1,5 +1,5 @@
 window.onload = (function() {
-		//轮播图
+		
 		var liss = document.getElementById('liss');
 		var liss_li = liss.getElementsByTagName('li');
 		var pic = document.getElementById('pic');
