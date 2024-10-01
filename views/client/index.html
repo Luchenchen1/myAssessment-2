@@ -8,18 +8,18 @@
 	</head>
 
 	<body>
-		<!--头部-->
+		
 		<div class='head'>
 			
 		</div>
 	
 		<div class='rotation'>
 			
-			<!--大图-->
+			
 			<ul id='pic'>
 				<li><img src="/img/pic2.jpeg"></li>
 			</ul>
-			<!--小图-->
+		
 			<div class='pic_min'>
 				<ul id='liss'>
 					<li>
@@ -39,9 +39,9 @@
 			</div>
 		
 		</div>
-		<!--内容区-->
+	
 		<div class='meisongqu'>
-			<!--左边内容区-->
+			
 			<div class='meisongqu_left'>
 				<div class='meisongqu_zhuanlan meisongqu_margin'>
 					<h2>Welcome to our non-profit organization</h2>
@@ -50,7 +50,7 @@
 					<p>telephone: 123-456-7890</p>
 				</div>
 			</div>
-			<!--右边内容区-->
+			
 			<div class='meisongqu_right'>
 				<h2>List of active fundraisers</h2>
 				<table class="table table-hover" cellpadding="0" cellspacing="0">
@@ -69,10 +69,10 @@
 					<tbody id="fundraisers"></tbody>
 				</table>
 				
-				   <!-- 添加图片 -->
+				 
 				   <div class="image-container" style="display: flex; justify-content: space-between; margin-top: 20px;">
-					<img src="/img/picture08.jpg" alt="左边图片描述" style="flex: 1; max-width: 48%; height: auto; border-radius: 10px; margin-right: 10px;">
-					<img src="/img/picture10.jpg" alt="右边图片描述" style="flex: 1; max-width: 48%; height: auto; border-radius: 10px; margin-left: 10px;">
+					<img src="/img/picture08.jpg" alt="Picture description on the left" style="flex: 1; max-width: 48%; height: auto; border-radius: 10px; margin-right: 10px;">
+					<img src="/img/picture10.jpg" alt="Picture description on the right" style="flex: 1; max-width: 48%; height: auto; border-radius: 10px; margin-left: 10px;">
 				</div>
 			</div>
 		</div>
@@ -80,7 +80,7 @@
 		<div class="foot"></div>
 		<script type="text/javascript" src="/js/index.js"></script>
 		<script type="text/javascript">
-		// 加载头部和底部
+		
 fetch('http://localhost:8085/head')
     .then(response => response.text())
     .then(data => {
@@ -93,7 +93,7 @@ fetch('http://localhost:8085/foot')
         document.querySelector('.foot').innerHTML = data;
     });
 
-// 搜索功能
+
 
 fetch('/api/indexbox')
 .then(response => response.json())
@@ -102,10 +102,10 @@ fetch('/api/indexbox')
         id: fundraiser.FUNDRAISER_ID,
         organizer: fundraiser.ORGANIZER,
         title: fundraiser.CAPTION,
-        targetAmount: `${fundraiser.TARGET_FUNDING} AUD`, // 可以根据需要修改货币格式
+        targetAmount: `${fundraiser.TARGET_FUNDING} AUD`, 
         currentAmount: `${fundraiser.CURRENT_FUNDING} AUD`,
         city: fundraiser.CITY,
-        active: fundraiser.ACTIVE === 1, // 根据 ACTIVE 字段设置布尔值
+        active: fundraiser.ACTIVE === 1, 
         category: fundraiser.category_name
     }));
 
@@ -126,7 +126,7 @@ fetch('/api/indexbox')
                 <td>${fundraiser.category}</td>
             `;
 
-            fundraisersContainer.appendChild(row); // 将行添加到 tbody 中
+            fundraisersContainer.appendChild(row); 
         }
     });
 })
