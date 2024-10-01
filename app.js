@@ -11,12 +11,12 @@ var api    = require('./routes/api.js');
 
 var app = express();
 
-// 允许我们访问的url地址
+// Allow us to access the url address
 app.all("*", function (req,res,next) {
   var allowedOrigins = [
     "*"
   ];
-　// 这里是允许跨域的的domain列表
+　// Here is a list of domains that are allowed to cross domains
   var origin = req.headers.origin;
   if(allowedOrigins.indexOf(origin) > -1){
     res.setHeader('Access-Control-Allow-Origin', origin);
@@ -27,7 +27,7 @@ app.all("*", function (req,res,next) {
   next();
 });
 
-// 配置项目模板引擎
+// Configure the project template engine
 app.engine('html', ejs.__express)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
@@ -40,9 +40,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//设置路由中间件
-app.use('/', client);//普通用户
-app.use('/api', api);//ajax请求路由
+// Set the routing middleware
+app.use('/', client);// Common user
+app.use('/api', api);//ajax request routing
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
