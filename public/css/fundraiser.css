@@ -5,7 +5,7 @@ body{min-width: 1200px;}
 
 .head .head_central .tiaozhuan4{background-color: #ff9d00;}
 
-/*------------------内容区域------------------*/
+
 .bg{width: 1000px;margin: 0 auto}
 
 .title_box{height: 40px;margin: 20px auto;line-height:40px;width: 1000px;padding-left: 20px;overflow: visible;}
@@ -18,7 +18,7 @@ body{min-width: 1200px;}
 
 
 .content {
-    width: 100%; /* 设置为100%宽度 */
+    width: 100%; 
     margin: 0 auto;
     padding: 30px;
     background-color: #ffffff;
@@ -47,12 +47,12 @@ body{min-width: 1200px;}
     margin-left: 34%;
   }
   input[type="text"] {
-    flex: 1; /* 使输入框等宽 */
+    flex: 1; 
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    margin-right: 10px; /* 添加右边距 */
+    margin-right: 10px; 
     transition: border-color 0.3s;
   }
   input[type="text"]:focus {
@@ -72,8 +72,7 @@ body{min-width: 1200px;}
     font-size: 23px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin: 0 5px; /* 增加左右边距 */
-  }
+    margin: 0 5px; 
   button:hover {
     background-color: #0056b3;
   }
@@ -93,8 +92,8 @@ body{min-width: 1200px;}
         overflow: hidden;
     }
     .result-item img {
-        width: 150px; /* 图片宽度 */
-        height: auto; /* 自适应高度 */
+        width: 150px; 
+        height: auto; 
     }
     .result-content {
         padding: 15px;
